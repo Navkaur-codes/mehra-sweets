@@ -1,0 +1,21 @@
+# Settings for deploying worker.js from the command line with Cloudflare's
+# "wrangler" tool. OPTIONAL: the dashboard route needs none of this.
+#
+#   npx wrangler login                       (opens the browser once)
+#   npx wrangler deploy                      (uploads worker.js; prints your workers.dev URL)
+#   npx wrangler secret put LLM_API_KEY      (paste your gsk_... key; never put it in this file)
+#
+# Optional secrets, same way: TELEGRAM_BOT_TOKEN. Plain settings go under [vars].
+
+name = "my-sales-desk"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+# Don't delete settings that were added in the dashboard (e.g. LEAD_WEBHOOK_URL).
+keep_vars = true
+
+[vars]
+# Groq (fast). Backup: NVIDIA, LLM_BASE_URL = "https://integrate.api.nvidia.com/v1", LLM_MODEL = "moonshotai/kimi-k3"
+LLM_BASE_URL = "https://api.groq.com/openai/v1"
+LLM_MODEL = "openai/gpt-oss-120b"            # confirm the exact ID at console.groq.com/docs/models
+ALLOWED_ORIGINS = "*"                        # change to your site's address before sharing it

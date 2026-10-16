@@ -1,0 +1,17 @@
+SESSION 10 STARTER PACK: BUILD A CHATBOT FOR A BUSINESS
+
+1. Open Claude Code in this folder.
+2. Find your business card in cards/.
+3. Use the prompts in prompts.md, in order. Change only the parts in [square brackets].
+4. Claude Code creates your bot in a new folder, my-bot/.
+
+FILES
+cards/           the three business cards
+tests/           the 15 tests for each card (used by Prompt 4)
+prompts.md       today's prompts (also in your handout)
+worker.js        the bot your new one is built from
+chat-widget.js   the chat bubble for your website
+CLAUDE.md        instructions Claude Code reads automatically
+extras/          optional: command-line deploy, Vercel version, Google Sheet
+
+Never put your key in a file, on GitHub or in Claude.

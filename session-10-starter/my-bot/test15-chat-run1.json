@@ -1,0 +1,123 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hi, my company wants 60 one-kg kaju katli gift boxes delivered to our office in Ludhiana next Friday."
+    },
+    {
+      "role": "assistant",
+      "content": "The per‑kg price for Kaju katli is Rs 1,100 and a 1 kg gift box adds Rs 80 for packing, so each box is about Rs 1,180. For 60 boxes the rough estimate is 60 × 1,180 = Rs 70,800 (prices can change during festivals and the team will confirm the final amount).  \n\nMay I have your full name and WhatsApp number, and could you share the exact delivery address of your office?"
+    },
+    {
+      "role": "user",
+      "content": "My name is Neha Arora, company Arora Textiles, WhatsApp +91 98765 43210. Please deliver to the Arora Textiles office in Ludhiana; your team can take the exact address on WhatsApp."
+    },
+    {
+      "role": "assistant",
+      "content": "Could you let me know the preferred delivery time on Friday 16 October 2026 (e.g., morning, afternoon, or a specific hour)?"
+    },
+    {
+      "role": "user",
+      "content": "No specific time, any time on Friday is fine."
+    },
+    {
+      "role": "assistant",
+      "content": "Shall I send this to the Mehra Sweets team?"
+    },
+    {
+      "role": "user",
+      "content": "Yes, please send it."
+    },
+    {
+      "role": "assistant",
+      "content": "The Mehra Sweets team will contact you on WhatsApp within the next two hours to confirm the order details and final price."
+    },
+    {
+      "role": "user",
+      "content": "thanks"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you. Our team will be in touch shortly."
+    }
+  ],
+  "enquiriesSent": [
+    "MS-261009-F3D7"
+  ],
+  "log": [
+    {
+      "user": "Hi, my company wants 60 one-kg kaju katli gift boxes delivered to our office in Ludhiana next Friday.",
+      "status": 200,
+      "reply": "The per‑kg price for Kaju katli is Rs 1,100 and a 1 kg gift box adds Rs 80 for packing, so each box is about Rs 1,180. For 60 boxes the rough estimate is 60 × 1,180 = Rs 70,800 (prices can change during festivals and the team will confirm the final amount).  \n\nMay I have your full name and WhatsApp number, and could you share the exact delivery address of your office?",
+      "enquiry": null,
+      "error": null
+    },
+    {
+      "user": "My name is Neha Arora, company Arora Textiles, WhatsApp +91 98765 43210. Please deliver to the Arora Textiles office in Ludhiana; your team can take the exact address on WhatsApp.",
+      "status": 200,
+      "reply": "Could you let me know the preferred delivery time on Friday 16 October 2026 (e.g., morning, afternoon, or a specific hour)?",
+      "enquiry": null,
+      "error": null
+    },
+    {
+      "user": "No specific time, any time on Friday is fine.",
+      "status": 200,
+      "reply": "Shall I send this to the Mehra Sweets team?",
+      "enquiry": {
+        "ref": "MS-261009-F3D7",
+        "summary": "Office gifting of 60 one‑kg Kaju katli boxes for Arora Textiles, delivery Friday 16 Oct 2026.",
+        "status": "demo",
+        "data": {
+          "ref": "MS-261009-F3D7",
+          "received_at": "2026-10-09T13:28:13.948Z",
+          "business": "Mehra Sweets",
+          "channel": "website_chat",
+          "priority": "high",
+          "is_update": false,
+          "customer_name": "Neha Arora",
+          "company": "Arora Textiles",
+          "country": "India",
+          "city": "Ludhiana",
+          "phone_whatsapp": "+91 98765 43210",
+          "email": "",
+          "preferred_contact": "whatsapp",
+          "buyer_type": "other",
+          "enquiry_type": "bulk_order",
+          "items": [
+            {
+              "product": "Kaju katli",
+              "specification": "1 kg box",
+              "quantity": "60 boxes"
+            }
+          ],
+          "delivery_destination": "Arora Textiles office, Ludhiana (exact address to be provided on WhatsApp)",
+          "timeline": "Friday 16 October 2026",
+          "summary": "Office gifting of 60 one‑kg Kaju katli boxes for Arora Textiles, delivery Friday 16 Oct 2026.",
+          "session_id": "",
+          "page": "",
+          "referrer": "",
+          "utm_source": "",
+          "utm_medium": "",
+          "utm_campaign": "",
+          "utm_content": "",
+          "utm_term": ""
+        }
+      },
+      "error": null
+    },
+    {
+      "user": "Yes, please send it.",
+      "status": 200,
+      "reply": "The Mehra Sweets team will contact you on WhatsApp within the next two hours to confirm the order details and final price.",
+      "enquiry": null,
+      "error": null
+    },
+    {
+      "user": "thanks",
+      "status": 200,
+      "reply": "Thank you. Our team will be in touch shortly.",
+      "enquiry": null,
+      "error": null
+    }
+  ]
+}

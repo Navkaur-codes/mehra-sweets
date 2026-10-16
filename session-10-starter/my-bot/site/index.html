@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mehra Sweets | Sweet shop, Model Town, Ludhiana</title>
+<meta name="description" content="Mehra Sweets, sweet shop and namkeen maker in Model Town, Ludhiana since 1987. Festival, wedding, party and office gifting orders.">
+<style>
+  :root {
+    /* Site palette: marigold, deep maroon, pistachio, warm cream */
+    --cream: #FFF8EC;
+    --cream-2: #FCEBD0;
+    --paper: #FFFFFF;
+    --maroon: #7A1F2B;
+    --maroon-2: #5C1520;
+    --marigold: #F2A007;
+    --saffron: #E8740C;
+    --pista: #7C9A3D;
+    --ink: #3A1E14;
+    --muted: #7A5A4A;
+    --rule: #EBD3B0;
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(122, 31, 43, .12);
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+    /* Chat widget colours (read by chat-widget.js) */
+    --sd-accent: #7A1F2B;
+    --sd-accent-ink: #FFF8EC;
+    --sd-bg: #FFFDF8;
+    --sd-surface: #FCEBD0;
+    --sd-ink: #3A1E14;
+    --sd-muted: #7A5A4A;
+    --sd-rule: #EBD3B0;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; }
+  a { color: var(--maroon); }
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.2; margin: 0 0 .5em; }
+  .wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
+
+  /* Festive bunting strip */
+  .bunting {
+    height: 14px;
+    background:
+      linear-gradient(135deg, var(--marigold) 25%, transparent 25%) -7px 0 / 14px 14px,
+      linear-gradient(225deg, var(--saffron) 25%, transparent 25%) -7px 0 / 14px 14px,
+      var(--maroon);
+  }
+
+  /* Header */
+  header.top {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255, 248, 236, .94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--maroon); }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: radial-gradient(circle at 35% 30%, #FFD36B, var(--marigold) 55%, var(--saffron));
+    color: var(--maroon-2); font-family: var(--serif); font-weight: 700; font-size: 1.25rem;
+    box-shadow: 0 0 0 3px var(--cream), 0 0 0 5px var(--marigold);
+  }
+  .brand-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; letter-spacing: .3px; white-space: nowrap; }
+  nav.links { display: flex; gap: 18px; }
+  nav.links a { text-decoration: none; color: var(--ink); font-weight: 500; font-size: .95rem; }
+  nav.links a:hover { color: var(--maroon); }
+  .btn-call {
+    display: none; text-decoration: none; background: var(--maroon); color: var(--cream);
+    padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: .9rem; white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(242,160,7,.35) 0 90px, transparent 91px),
+      radial-gradient(circle at 88% 75%, rgba(232,116,12,.25) 0 130px, transparent 131px),
+      radial-gradient(circle at 75% 10%, rgba(124,154,61,.18) 0 60px, transparent 61px),
+      linear-gradient(160deg, var(--maroon) 0%, var(--maroon-2) 100%);
+    color: var(--cream);
+    padding: 72px 0 96px;
+    overflow: hidden;
+  }
+  .hero::after {
+    /* scalloped edge, like the rim of a sweet box */
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 28px;
+    background: radial-gradient(circle at 14px 0, transparent 14px, var(--cream) 15px) 0 0 / 28px 28px repeat-x;
+  }
+  .hero .eyebrow {
+    display: inline-block; padding: 4px 14px; border-radius: 999px;
+    background: rgba(255, 211, 107, .18); border: 1px solid rgba(255, 211, 107, .5);
+    color: #FFD36B; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
+  }
+  .hero h1 { font-size: clamp(2.3rem, 7vw, 4rem); margin: 18px 0 12px; color: #FFF3D6; }
+  .hero h1 span { color: var(--marigold); }
+  .hero p.lead { font-size: clamp(1.05rem, 2.6vw, 1.25rem); max-width: 620px; margin: 0 0 28px; color: #F7E4CC; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+    padding: 13px 22px; border-radius: 999px; border: 0;
+    font: 600 1rem var(--sans); text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-gold { background: linear-gradient(135deg, #FFD36B, var(--marigold)); color: var(--maroon-2); box-shadow: 0 6px 18px rgba(242,160,7,.4); }
+  .btn-ghost { background: transparent; color: var(--cream); border: 2px solid rgba(255,248,236,.6); }
+  .hero-facts { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 30px; font-size: .95rem; color: #F7E4CC; }
+  .hero-facts b { color: #FFD36B; }
+
+  /* Sections */
+  section.block { padding: 64px 0; }
+  .section-head { text-align: center; margin-bottom: 36px; }
+  .section-head h2 { font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--maroon); }
+  .section-head p { color: var(--muted); max-width: 600px; margin: 0 auto; }
+  .divider {
+    display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 auto 14px;
+  }
+  .divider::before, .divider::after { content: ""; width: 48px; height: 2px; background: var(--marigold); border-radius: 2px; }
+  .divider i { width: 10px; height: 10px; background: var(--saffron); transform: rotate(45deg); display: block; }
+
+  /* Sweets grid */
+  .sweets { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+  .sweet {
+    background: var(--paper); border-radius: var(--radius); padding: 22px 20px 20px;
+    box-shadow: var(--shadow); border: 1px solid var(--rule);
+    display: flex; flex-direction: column; gap: 6px; position: relative; overflow: hidden;
+    transition: transform .2s ease;
+  }
+  .sweet:hover { transform: translateY(-4px); }
+  .sweet .dot {
+    width: 54px; height: 54px; border-radius: 50%; margin-bottom: 8px;
+    box-shadow: inset -6px -6px 12px rgba(0,0,0,.12), inset 4px 4px 10px rgba(255,255,255,.5);
+  }
+  .sweet h3 { font-size: 1.2rem; color: var(--ink); margin: 0; }
+  .sweet .price { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--maroon); }
+  .sweet .price small { font: 500 .85rem var(--sans); color: var(--muted); }
+  /* each sweet gets its own colour "drop" */
+  .kaju   .dot { background: linear-gradient(135deg, #F3EEE6, #D9D2C5); border: 3px solid #C9C9C9; }
+  .laddoo .dot { background: radial-gradient(circle, #FFB627 30%, #F28C0F); }
+  .pinni  .dot { background: radial-gradient(circle, #C98B4A 30%, #8E5A2B); }
+  .jamun  .dot { background: radial-gradient(circle at 40% 35%, #9C3B1E, #5A1D0E); }
+  .rasgulla .dot { background: radial-gradient(circle at 40% 35%, #FFFFFF, #EFE8DA); border: 1px solid var(--rule); }
+  .barfi  .dot { background: linear-gradient(135deg, #FFF4DC, #F2DDB0); border-radius: 12px; }
+  .namkeen .dot { background: radial-gradient(circle, #E9B949 25%, #C9792A 60%, #8C4B1A); }
+  .note {
+    margin-top: 22px; text-align: center; color: var(--muted); font-size: .95rem;
+  }
+  .note b { color: var(--maroon); }
+
+  /* Gift boxes */
+  .gift { background: linear-gradient(180deg, var(--cream-2), var(--cream)); }
+  .gift-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .card {
+    background: var(--paper); border-radius: var(--radius); padding: 24px;
+    border: 1px solid var(--rule); box-shadow: var(--shadow);
+  }
+  .card h3 { color: var(--maroon); font-size: 1.25rem; }
+  .card ul { margin: 0; padding-left: 1.1em; }
+  .card li { margin-bottom: 6px; }
+  .box-tag {
+    display: inline-block; font-weight: 700; color: var(--maroon-2);
+    background: linear-gradient(135deg, #FFD36B, var(--marigold));
+    padding: 2px 10px; border-radius: 6px; margin-right: 4px; font-size: .9rem;
+  }
+  .tip {
+    border-left: 5px solid var(--pista);
+    background: linear-gradient(90deg, rgba(124,154,61,.12), var(--paper) 60%);
+  }
+  .tip h3 { color: #4F6A1E; }
+
+  /* Ordering and delivery */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; counter-reset: s; }
+  .step { background: var(--paper); border: 1px solid var(--rule); border-radius: var(--radius); padding: 22px; position: relative; }
+  .step::before {
+    counter-increment: s; content: counter(s);
+    position: absolute; top: -14px; left: 20px; width: 30px; height: 30px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--maroon); color: var(--cream); font-weight: 700;
+  }
+  .step h3 { font-size: 1.1rem; color: var(--maroon); margin-top: 6px; }
+  .step p { margin: 0; color: var(--ink); }
+  .allergy {
+    margin-top: 22px; padding: 16px 20px; border-radius: 12px;
+    background: #FFF1E0; border: 1px dashed var(--saffron); color: var(--ink);
+  }
+
+  /* Visit */
+  .visit { background: var(--maroon); color: var(--cream); position: relative; }
+  .visit .section-head h2 { color: #FFD36B; }
+  .visit .section-head p { color: #F7E4CC; }
+  .visit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+  .visit .card { background: rgba(255,248,236,.06); border: 1px solid rgba(255,211,107,.35); box-shadow: none; color: var(--cream); }
+  .visit .card h3 { color: #FFD36B; }
+  .visit a { color: #FFD36B; }
+  .big { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; margin: 0 0 4px; }
+  .contact-links { display: flex; flex-direction: column; gap: 10px; }
+  .contact-links a {
+    display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600;
+    padding: 10px 14px; border-radius: 12px; background: rgba(255,248,236,.1); color: var(--cream);
+    word-break: break-word;
+  }
+  .contact-links a:hover { background: rgba(255,211,107,.2); }
+  .contact-links span.ic {
+    width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center;
+    background: var(--marigold); color: var(--maroon-2); font-size: .8rem; font-weight: 800;
+  }
+
+  /* Footer */
+  footer { background: var(--maroon-2); color: #E9D3BC; text-align: center; padding: 26px 0 100px; font-size: .9rem; }
+  footer strong { color: #FFD36B; }
+
+  /* Phone layout */
+  @media (max-width: 720px) {
+    nav.links { display: none; }
+    .btn-call { display: inline-block; }
+    .hero { padding: 48px 0 80px; }
+    section.block { padding: 48px 0; }
+    .btn { flex: 1 1 auto; justify-content: center; }
+    .sweets { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .sweet { padding: 16px 14px; }
+    .sweet .dot { width: 42px; height: 42px; margin-bottom: 4px; }
+    .sweet h3 { font-size: 1.02rem; }
+    .sweet .price { font-size: 1.25rem; }
+  }
+  @media (max-width: 360px) {
+    .brand { gap: 8px; }
+    .brand-mark { width: 32px; height: 32px; font-size: 1.05rem; }
+    .brand-name { font-size: 1.1rem; }
+    .btn-call { padding: 7px 11px; font-size: .85rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .sweet { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bunting" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Mehra Sweets home">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-name">Mehra Sweets</span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#sweets">Sweets</a>
+      <a href="#gift-boxes">Gift boxes</a>
+      <a href="#orders">Orders</a>
+      <a href="#visit">Visit us</a>
+    </nav>
+    <a class="btn-call" href="tel:+919876543210">Call us</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Model Town, Ludhiana &middot; Since 1987</span>
+      <h1>Sweets for every <span>celebration</span></h1>
+      <p class="lead">Mehra Sweets is a sweet shop and namkeen maker in Ludhiana. Buy from our shop counter, or order for festivals, weddings, parties and office gifting.</p>
+      <div class="actions">
+        <button class="btn btn-gold" type="button" onclick="SalesDesk.open('I would like to place an order')">Start an order</button>
+        <a class="btn btn-ghost" href="https://wa.me/919876543210">WhatsApp us</a>
+      </div>
+      <div class="hero-facts">
+        <span><b>Open every day</b> 8:00 am to 10:00 pm</span>
+        <span><b>Same-day pickup</b> on orders up to 5 kg</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="sweets">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="divider" aria-hidden="true"><i></i></div>
+        <h2>Our sweets and namkeen</h2>
+        <p>Shop prices, per kg.</p>
+      </div>
+      <div class="sweets">
+        <article class="sweet kaju"><div class="dot" aria-hidden="true"></div><h3>Kaju katli</h3><div class="price">Rs 1,100 <small>/ kg</small></div></article>
+        <article class="sweet laddoo"><div class="dot" aria-hidden="true"></div><h3>Motichoor laddoo</h3><div class="price">Rs 560 <small>/ kg</small></div></article>
+        <article class="sweet pinni"><div class="dot" aria-hidden="true"></div><h3>Pinni (desi ghee)</h3><div class="price">Rs 640 <small>/ kg</small></div></article>
+        <article class="sweet jamun"><div class="dot" aria-hidden="true"></div><h3>Gulab jamun</h3><div class="price">Rs 400 <small>/ kg</small></div></article>
+        <article class="sweet rasgulla"><div class="dot" aria-hidden="true"></div><h3>Rasgulla</h3><div class="price">Rs 400 <small>/ kg</small></div></article>
+        <article class="sweet barfi"><div class="dot" aria-hidden="true"></div><h3>Barfi (milk)</h3><div class="price">Rs 600 <small>/ kg</small></div></article>
+        <article class="sweet namkeen"><div class="dot" aria-hidden="true"></div><h3>Mixed namkeen</h3><div class="price">Rs 360 <small>/ kg</small></div></article>
+      </div>
+      <p class="note">Prices can change during festivals. <b>Our team confirms the final price with every order.</b></p>
+    </div>
+  </section>
+
+  <section class="block gift" id="gift-boxes">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="divider" aria-hidden="true"><i></i></div>
+        <h2>Gift boxes</h2>
+        <p>For weddings, parties, festivals and office gifting.</p>
+      </div>
+      <div class="gift-grid">
+        <div class="card">
+          <h3>Box packing</h3>
+          <ul>
+            <li><span class="box-tag">500 g box</span> Rs 50 extra for packing</li>
+            <li><span class="box-tag">1 kg box</span> Rs 80 extra for packing</li>
+            <li>Custom printed boxes for weddings and companies, from 50 boxes. Price on request.</li>
+          </ul>
+        </div>
+        <div class="card tip">
+          <h3>How many boxes?</h3>
+          <ul>
+            <li>Weddings and parties: most customers give <b>one 500 g box per guest</b>.</li>
+            <li>Office gifting: most customers give <b>one 1 kg box per person</b>.</li>
+          </ul>
+          <p style="margin:12px 0 0"><button class="btn btn-gold" type="button" onclick="SalesDesk.open('Help me plan boxes for my event')">Plan with our assistant</button></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="orders">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="divider" aria-hidden="true"><i></i></div>
+        <h2>Orders and delivery</h2>
+        <p>Our team replies to order enquiries on WhatsApp within 2 hours during opening hours.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Same-day pickup</h3><p>Orders up to 5 kg can be picked up from the shop the same day.</p></div>
+        <div class="step"><h3>Bulk orders</h3><p>More than 5 kg, or 20 or more gift boxes: at least 2 days' notice. During Diwali week, 5 days' notice.</p></div>
+        <div class="step"><h3>Home delivery</h3><p>Within Ludhiana city on orders above Rs 1,500. Delivery charge Rs 100; free above Rs 5,000. No delivery outside Ludhiana and no courier for sweets.</p></div>
+        <div class="step"><h3>Payment</h3><p>Cash, UPI or card at the shop. For bulk orders, 50% advance by UPI to confirm.</p></div>
+      </div>
+      <p class="allergy"><b>Allergies:</b> many of our sweets are made in the same kitchen, so we cannot promise that any sweet is free from nuts, gluten or dairy. Please speak to the shop about allergies.</p>
+    </div>
+  </section>
+
+  <section class="block visit" id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="divider" aria-hidden="true"><i></i></div>
+        <h2>Visit or contact us</h2>
+        <p>Owner: Mrs. Anjali Mehra</p>
+      </div>
+      <div class="visit-grid">
+        <div class="card">
+          <h3>Opening hours</h3>
+          <p class="big">8:00 am to 10:00 pm</p>
+          <p style="margin:0">Open every day, including Sundays. On Holi the shop opens at 4:00 pm.</p>
+        </div>
+        <div class="card">
+          <h3>Shop address</h3>
+          <p class="big">SCO 12, Main Market</p>
+          <p style="margin:0">Model Town, Ludhiana, Punjab</p>
+        </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <div class="contact-links">
+            <a href="tel:+919876543210"><span class="ic" aria-hidden="true">TEL</span>+91 98765 43210</a>
+            <a href="https://wa.me/919876543210"><span class="ic" aria-hidden="true">WA</span>WhatsApp +91 98765 43210</a>
+            <a href="mailto:orders@mehrasweets.example"><span class="ic" aria-hidden="true">@</span>orders@mehrasweets.example</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 6px"><strong>Mehra Sweets</strong> &middot; SCO 12, Main Market, Model Town, Ludhiana</p>
+    <p style="margin:0">This is a demo website for a fictional business, made for a classroom exercise. All contact details are placeholders.</p>
+  </div>
+</footer>
+
+<script>
+  window.SalesDeskConfig = {
+    endpoint: "https://mehra-sweets.navpreetkaur7298.workers.dev/chat",
+    title: "Mehra Sweets order desk",
+    subtitle: "Automated assistant. Orders go to our shop team.",
+    greeting: "Namaste! I can tell you about our sweets and prices, help you plan gift boxes for an event, or send an order enquiry to our shop team. What are you looking for?",
+    quickReplies: ["Sweets and prices", "Plan boxes for my event", "Home delivery", "Place an order"],
+    launcherLabel: "Order sweets",
+    fallbackContact: "+91 98765 43210 or orders@mehrasweets.example",
+    enquiryNextStep: "Our team replies on WhatsApp within 2 hours during opening hours (8:00 am to 10:00 pm).",
+    showStructuredData: true
+  };
+</script>
+<script src="chat-widget.js"></script>
+</body>
+</html>
